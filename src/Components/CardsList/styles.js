@@ -7,13 +7,14 @@ export const CardsListContainer = styled.main`
 export const CardsListElem = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  height: 100%;
 `;
 
 export const Card = styled.article`
   display: flex;
   flex-direction: column;
-  height: 20rem;
+  height: 10rem;
   background-color: lightgray;
 `;
