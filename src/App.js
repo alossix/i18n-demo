@@ -9,9 +9,9 @@ import { Container } from './styles';
 function App() {
   return (
     <Container>
-      <Header as="header" />
+      <Header />
       <CardsList />
-      <Footer as="footer" />
+      <Footer />
     </Container>
   );
 }

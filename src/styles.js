@@ -2,6 +2,6 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   display: grid;
-  grid-template-rows: 3rem 1fr 3rem;
+  grid-template-rows: auto 1fr auto;
   height: 100vh;
 `;
