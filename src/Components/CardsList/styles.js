@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const CardsListContainer = styled.main`
-  background-color: lightblue;
+  padding: 1rem;
 `;
 
 export const CardsListElem = styled.section`
@@ -16,5 +16,9 @@ export const Card = styled.article`
   display: flex;
   flex-direction: column;
   height: 10rem;
-  background-color: lightgray;
+  background-color: ${(p) => p.bg};
 `;
+
+export const CardTitle = styled.h2``;
+
+export const CardText = styled.p``;
