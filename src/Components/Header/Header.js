@@ -12,35 +12,40 @@ import {
   ModeSelect,
 } from './styles';
 
-// Text Options
-const text = (lang) => {
-  if (lang === 'en') {
-    return {
-      header: `Internationalization (i18n) App Demonstration`,
-      langSelectLabel: `Please choose a language:`,
-      modeSelectLabel: `Dark mode/light mode:`,
-      modeSelectDark: `Dark mode`,
-      modeSelectLight: `Light mode`,
-    };
-  }
-  return {
-    header: `Dimostrazione dell'App per l'Internazionalizzazione (i18n)`,
-    langSelectLabel: `Si prega di scegliere una lingua:`,
-    modeSelectLabel: `Modalità scura/modalità chiara:`,
-    modeSelectDark: `Modalità scura`,
-    modeSelectLight: `Modalità chiara`,
-  };
-};
-
 const Header = () => {
   const { language, setLanguage } = useContext(LangContext);
   const { darkMode, setDarkMode } = useContext(ModeContext);
+  let text = {};
+
+  // Header Text Options
+  const textHandler = () => {
+    if (language === 'en') {
+      return (text = {
+        header: `Internationalization (i18n) App Demonstration`,
+        header2: `State Management with Context API`,
+        langSelectLabel: `Please choose a language:`,
+        modeSelectLabel: `Dark mode/light mode:`,
+        modeSelectDark: `Dark mode`,
+        modeSelectLight: `Light mode`,
+      });
+    }
+    return (text = {
+      header: `Dimostrazione dell'App per l'Internazionalizzazione (i18n)`,
+      header2: `State Management con Context API`,
+      langSelectLabel: `Si prega di scegliere una lingua:`,
+      modeSelectLabel: `Modalità scura/modalità chiara:`,
+      modeSelectDark: `Modalità scura`,
+      modeSelectLight: `Modalità chiara`,
+    });
+  };
+  textHandler();
 
   return (
     <HeaderContainer>
-      <HeaderTitle>{text(language).header}</HeaderTitle>
+      <HeaderTitle>{text.header}</HeaderTitle>
+      <HeaderTitle as="h2">{text.header2}</HeaderTitle>
       <LanguageSelectLabel htmlFor="lang">
-        {text(language).langSelectLabel}
+        {text.langSelectLabel}
       </LanguageSelectLabel>
       <LanguageSelect
         id="lang"
@@ -53,18 +58,13 @@ const Header = () => {
           Italiano
         </option>
       </LanguageSelect>
-      <ModeLabel htmlFor="mode">
-        {text(language).modeSelectLabel}
-      </ModeLabel>
-      <ModeSelect
-        id="mode"
-        onChange={(event) => setDarkMode(event.target.value)}
-      >
-        <option id="light" value={false}>
-          {text(language).modeSelectLight}
+      <ModeLabel htmlFor="mode">{text.modeSelectLabel}</ModeLabel>
+      <ModeSelect id="mode" onChange={() => setDarkMode(!darkMode)}>
+        <option id="light" value="false">
+          {text.modeSelectLight}
         </option>
-        <option id="dark" value={true}>
-          {text(language).modeSelectDark}
+        <option id="dark" value="true">
+          {text.modeSelectDark}
         </option>
       </ModeSelect>
     </HeaderContainer>
