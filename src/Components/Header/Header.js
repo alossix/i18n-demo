@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
+
 import LangContext from '../../store/lang-context';
+import ModeContext from '../../store/mode-context';
 
 import {
   HeaderContainer,
@@ -32,6 +34,7 @@ const text = (lang) => {
 
 const Header = () => {
   const { language, setLanguage } = useContext(LangContext);
+  const { darkMode, setDarkMode } = useContext(ModeContext);
 
   return (
     <HeaderContainer>
@@ -53,9 +56,16 @@ const Header = () => {
       <ModeLabel htmlFor="mode">
         {text(language).modeSelectLabel}
       </ModeLabel>
-      <ModeSelect id="mode">
-        <option>{text(language).modeSelectDark}</option>
-        <option>{text(language).modeSelectLight}</option>
+      <ModeSelect
+        id="mode"
+        onChange={(event) => setDarkMode(event.target.value)}
+      >
+        <option id="light" value={false}>
+          {text(language).modeSelectLight}
+        </option>
+        <option id="dark" value={true}>
+          {text(language).modeSelectDark}
+        </option>
       </ModeSelect>
     </HeaderContainer>
   );

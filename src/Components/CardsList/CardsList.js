@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 
 import LangContext from '../../store/lang-context';
+import ModeContext from '../../store/mode-context';
+
 import { CardsListContainer, CardsListElem, Card } from './styles';
 
 const text = (lang) => {
@@ -22,6 +24,7 @@ const text = (lang) => {
 
 const CardsList = () => {
   const { language } = useContext(LangContext);
+  const { darkMode } = useContext(ModeContext);
 
   return (
     <CardsListContainer>

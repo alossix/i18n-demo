@@ -5,6 +5,10 @@ export const HeaderContainer = styled.header`
   display: flex;
   flex-direction: column;
   align-items: space-between;
+
+  &.dark {
+    background-color: coral;
+  }
 `;
 
 export const HeaderTitle = styled.h1``;
