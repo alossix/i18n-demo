@@ -13,7 +13,7 @@ import {
 } from './styles';
 
 const Header = () => {
-  const { mode, darkMode } = useContext(ModeContext);
+  const { setTheme } = useContext(ModeContext);
   const { language, setLanguage } = useContext(LangContext);
   let text = {};
 
@@ -58,8 +58,13 @@ const Header = () => {
           Italiano
         </option>
       </LanguageSelect>
-      <ModeSelectLabel>{text.modeSelectLabel}</ModeSelectLabel>
-      <ModeSelect>
+      <ModeSelectLabel htmlFor="mode">
+        {text.modeSelectLabel}
+      </ModeSelectLabel>
+      <ModeSelect
+        id="mode"
+        onChange={(event) => setTheme(event.target.value)}
+      >
         <option id="light" value="light">
           {text.modeSelectLight}
         </option>

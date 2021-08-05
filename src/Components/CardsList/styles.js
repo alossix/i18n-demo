@@ -24,10 +24,6 @@ export const Card = styled.article`
   background-color: ${(p) => p.bg};
 `;
 
-export const CardTitle = styled.h2`
-  background-color: white;
-`;
+export const CardTitle = styled.h2``;
 
-export const CardText = styled.p`
-  background-color: white;
-`;
+export const CardText = styled.p``;

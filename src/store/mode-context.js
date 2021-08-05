@@ -1,19 +1,15 @@
 import React, { useState } from 'react';
 
 const ModeContext = React.createContext({
-  mode: 'light',
-  setMode: () => {},
-  toggleMode: () => {},
+  theme: 'light',
+  setTheme: () => {},
 });
 
 export const ModeContextProvider = ({ children }) => {
-  const [mode, setMode] = useState('light');
-
-  const isDarkMode = mode === 'light';
-  const toggleMode = () => setMode(isDarkMode ? 'light' : 'dark');
+  const [theme, setTheme] = useState('light');
 
   return (
-    <ModeContext.Provider value={{ mode, setMode, toggleMode }}>
+    <ModeContext.Provider value={{ theme, setTheme }}>
       {children}
     </ModeContext.Provider>
   );
