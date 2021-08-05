@@ -18,12 +18,23 @@ export const CardsListElem = styled.section`
 export const Card = styled.article`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   align-items: flex-start;
   height: 10rem;
   background-color: ${(p) => p.bg};
+  padding: 1rem;
 `;
 
-export const CardTitle = styled.h2``;
+export const CardsListTitle = styled.h2``;
 
-export const CardText = styled.p``;
+export const CardTitle = styled.h3`
+  color: white;
+  mix-blend-mode: difference;
+  margin: 0;
+`;
+
+export const CardText = styled.p`
+  color: white;
+  mix-blend-mode: difference;
+  margin: 0;
+`;

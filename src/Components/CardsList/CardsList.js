@@ -5,6 +5,7 @@ import LangContext from '../../store/lang-context';
 import {
   CardsListContainer,
   CardsListElem,
+  CardsListTitle,
   Card,
   CardTitle,
   CardText,
@@ -40,7 +41,7 @@ const CardsList = () => {
 
   return (
     <CardsListContainer>
-      <CardTitle>{text.containerTitle}</CardTitle>
+      <CardsListTitle>{text.containerTitle}</CardsListTitle>
       <CardsListElem>
         <Card bg={language === 'en' ? '#b22234' : '#008c45'}>
           <CardTitle>{text.firstCardTitle}</CardTitle>
