@@ -1,15 +1,18 @@
 import styled from 'styled-components';
 
 export const CardsListContainer = styled.main`
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
 `;
 
 export const CardsListElem = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   flex-wrap: wrap;
-  height: 100%;
+  border: 2px solid black;
 `;
 
 export const Card = styled.article`
