@@ -23,7 +23,7 @@ export const LanguageSelect = styled.select`
   width: 10rem;
 `;
 
-export const ModeLabel = styled.label`
+export const ModeSelectLabel = styled.label`
   padding-right: 2rem;
 `;
 export const ModeSelect = styled.select`

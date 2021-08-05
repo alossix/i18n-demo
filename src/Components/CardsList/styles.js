@@ -18,10 +18,16 @@ export const CardsListElem = styled.section`
 export const Card = styled.article`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   height: 10rem;
   background-color: ${(p) => p.bg};
 `;
 
-export const CardTitle = styled.h2``;
+export const CardTitle = styled.h2`
+  background-color: white;
+`;
 
-export const CardText = styled.p``;
+export const CardText = styled.p`
+  background-color: white;
+`;

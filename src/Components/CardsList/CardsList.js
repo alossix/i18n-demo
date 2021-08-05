@@ -40,7 +40,7 @@ const CardsList = () => {
 
   return (
     <CardsListContainer>
-      {text.containerTitle}
+      <CardTitle>{text.containerTitle}</CardTitle>
       <CardsListElem>
         <Card bg={language === 'en' ? '#b22234' : '#008c45'}>
           <CardTitle>{text.firstCardTitle}</CardTitle>
